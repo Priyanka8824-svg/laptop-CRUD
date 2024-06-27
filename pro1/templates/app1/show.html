@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Show</title>
+{% endblock %}
+
+{% block content %}
+    <h1><center><b>Laptop Record</b></center></h1>
+
+    <table class="table table-primary table-striped">
+        <thead>
+            <tr>
+                <td>Laptop ID</td>
+                <td>Laptop Name</td>
+                <td>Laptop Price</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for laptop in obj %}
+            <tr>
+                <td>{{laptop.lid}}</td>
+                <td>{{laptop.laptop_name}}</td>
+                <td>{{laptop.price}}</td>
+
+            <td>
+                <a href="/a1/uv/{{laptop.lid}}/"><button class="btn btn-success">Update</button></a>
+                <a href="/a1/dv/{{laptop.lid}}/"><button class="btn btn-warning">Delete</button></a>
+
+            </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
